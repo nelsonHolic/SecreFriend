@@ -1,0 +1,15 @@
+{
+    "palabra" : "perro",
+    "definicion": "El perro o perro doméstico (Canis lupus familiaris) es un mamífero carnívoro de la familia de los cánidos, que constituye una subespecie del lobo (Canis lupus). Un estudio publicado por la revista de divulgación científica Nature revela que, gracias al proceso de domesticación, el organismo del perro se ha adaptado5 a cierta clase de alimentos, en este caso el almidón.6 Su tamaño o talla, su forma y pelaje es muy diverso según la raza. Posee un oído y olfato muy desarrollados, siendo este último su principal órgano sensorial. En las razas pequeñas puede alcanzar una longevidad de cerca de 20 años, con atención esmerada por parte del propietario, de otra forma su vida en promedio es alrededor de los 15 años.",
+    "imagenes": [
+        {"url" : "/media/img/dog/perro1","format" : ["jpg" , "png"]},
+        {"url" : "/media/img/dog/perro2","format" : ["jpg" , "png"]},
+        {"url" : "/media/img/dog/perro3","format" : ["jpg" , "png"]}
+    ],
+    "audios": [
+        {"url" : "/media/sonidos/dog/perro1", "formatos": ["mp3","wav", "ogg"]}
+    ],
+    "videos": [
+        {"url" : "/media/videos/dog/perro1", "formatos": ["webm", "mp4", "flv"]}
+    ]
+}
