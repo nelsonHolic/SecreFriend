@@ -2,7 +2,7 @@
 <html ng-app="appPrincipal">
 <head lang="en" >
     <meta charset="UTF-8">
-    <title>Scret Friend</title>
+    <title>Secret Friend</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static "/Frontend/css/principal.css" %}">
     <style>
@@ -20,6 +20,17 @@
             color: purple;
         }
 
+        #sorteador
+        {
+            width: 80%;
+            border-radius: 10px;
+            border: crimson;
+            border-style: solid;
+            text-align: center;
+            margin:0 auto 0 auto;
+        }
+
+
     </style>
     <script>
         CSRF_TOKEN = '{{ csrf_token }}';
@@ -29,10 +40,10 @@
     <script src="{% static "/Frontend/bower_components/jquery/jquery.min.js" %}"></script>
     <script src="{% static "/Frontend/js/apps/sorteo.js" %}"></script>
 </head>
-<body>
+<body style="padding: 5%">
 
 
-<div>
+<div id="sorteador">
     <p  class="deslogueo" ng-controller="principalController" ng-click='desLoguearse()'>cerrar sesion</p>
 
     <br>

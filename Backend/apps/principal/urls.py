@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^puebaSession/$',ajaxRepond().pruebaSession),
     url(r'^desLoguearse/$',ajaxRepond().desLoguearse),
     url(r'^getSorteados/$',ajaxRepond().getSorteadores),
+    url(r'^postSorteado/$',ajaxRepond().postSorteado),
 )

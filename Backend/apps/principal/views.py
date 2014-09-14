@@ -93,3 +93,30 @@ class ajaxRepond(TemplateView):
         else:
             error = 'un error ha ocurrido'
         return HttpResponse(error)
+
+    def postSorteado(self,request,*args,**kwargs):
+        usuario = json.loads(request.session['usuario'])[0]
+        error = None
+        if (usuario):
+            print usuario
+            usuario = get_or_none(Seguridadfriend,id = usuario[u'pk'])
+            if(usuario):
+                if(not usuario.jugado):
+                    query = Q(seleccionado = False)
+                    elegido = json.loads(request.body)
+                    usuarioElegido = get_or_none(Seguridadfriend,id = elegido['id'])
+                    print 'usuario elegido'
+                    print usuarioElegido.username
+                    usuarioElegido.seleccionado = True
+                    usuarioElegido.save()
+                    usuario.jugado = True
+                    usuario.save()
+                    return HttpResponse('sucess', mimetype = 'application/json')
+                else:
+                    error = 'usted ya ha jugado'
+                    print error
+            else:
+                error = 'un error ha ocurrido'
+        else:
+            error = 'un error ha ocurrido'
+        return HttpResponse(error)
