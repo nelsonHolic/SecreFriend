@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html ng-app="appLogueo">
+<head lang="en" >
     <meta charset="UTF-8">
     <title>Scret Friend</title>
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static "/Frontend/app/bower_components/bootstrap/dist/css/bootstrap.css" %}">
-    <link rel="stylesheet" href="{% static "/Frontend/app/css/app.css" %}">
-    <script src="{% static "/Frontend/app/bower_components/angular/angular.js" %}"></script>
-    <script src="{% static "/Frontend/app/bower_components/angular-route/angular-route.js" %}"></script>
-    <script src="{% static "/Frontend/app/js/logueo.js" %}"></script>
+    <link rel="stylesheet" href="{% static "/Frontend/css/logueo.css" %}">
+    <script>
+        CSRF_TOKEN = '{{ csrf_token }}';
+    </script>
+    <script src="{% static "/Frontend/bower_components/angular/angular.js" %}"></script>
+    <script src="{% static "/Frontend/bower_components/angular-route/angular-route.js" %}"></script>
+    <script src="{% static "/Frontend/bower_components/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "/Frontend/js/apps/logueo.js" %}"></script>
 </head>
 <body>
+ <logueo-element>
 
-loguearse
+ </logueo-element>
+
+<button  ng-controller="logueoController" ng-click="probarsession()"></button>
 
 </body>
 </html>

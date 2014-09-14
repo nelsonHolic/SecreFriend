@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3363404389">
-    <data-source source="LOCAL" name="Django default" uuid="2b427fa9-b939-481e-a6f9-f542ff2ace31">
+  <component name="DataSourceManagerImpl" format="xml" hash="173023518">
+    <data-source source="LOCAL" name="Django default" uuid="0d7acc28-b367-4522-bbd8-7fbf93af7fc8">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://postgresql1.alwaysdata.com/nelsonholic_seguridadfriend</jdbc-url>
@@ -9,12 +9,20 @@
       <user-password>dfc4dfcbdfc3df98df9edf9fdf9cdf92df98df99df9bdf9ddf9c</user-password>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Django default" uuid="0d7acc28-b367-4522-bbd8-7fbf93af7fc8">
-      <driver-ref>mysql</driver-ref>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql:///SeguridadFriend</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df98df9edf9fdf9cdf92df98df99df9bdf9ddf9c</user-password>
+    <data-source source="LOCAL" name="Django default2" uuid="9e9bb69a-c8e6-4188-82fa-370f9647dcc6">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://postgresql1.alwaysdata.com/nelsonholic_seguridadfriend</jdbc-url>
+      <user-name>nelsonholic</user-name>
+      <user-password>dfc4dfcbdfc3df98df9edf9fdf9cdf92df98df99df9bdf9ddf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="e8805317-487a-4f68-852a-9788bfafcde3">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://postgresql1.alwaysdata.com/nelsonholic_seguridadfriend</jdbc-url>
+      <user-name>nelsonholic</user-name>
+      <user-password>dfc4dfcbdfc3df98df9edf9fdf9cdf92df98df99df9bdf9ddf9c</user-password>
       <libraries />
     </data-source>
   </component>

@@ -85,6 +85,7 @@ RUTA_PROYECTO = Path(Path(__file__).ancestor(2).child('Backend'))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+APPEND_SLASH = False
 
 
 STATIC_ROOT = ''

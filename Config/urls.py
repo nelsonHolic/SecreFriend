@@ -5,10 +5,11 @@ admin.autodiscover()
 
 from django.conf.urls.static import static
 from Config.settings import FRONTEND_URL
+from Backend.apps.principal.views import *
 
 urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('Backend.apps.principal.urls')),
+    url(r'', include('Backend.apps.principal.urls')),
 ) + static('/Frontend/', document_root=FRONTEND_URL)
 

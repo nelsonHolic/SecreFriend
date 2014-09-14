@@ -10,3 +10,5 @@ os.environ['DJANGO_SETTINGS_MODULE'] = "%s.settings" % _PROJECT_NAME
 
 from django.core.servers.fastcgi import runfastcgi
 runfastcgi(method="threaded", daemonize="false")
+
+

@@ -3,7 +3,7 @@
 
 import os
 
-from unipath.errors import UnsafePathError
+from errors import UnsafePathError
 
 __all__ = ["AbstractPath"]
 

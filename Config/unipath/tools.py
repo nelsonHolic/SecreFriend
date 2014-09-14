@@ -4,7 +4,7 @@
 from __future__ import print_function, generators
 import sys
 
-from unipath import AbstractPath, Path
+import AbstractPath, Path
 
 def dict2dir(dir, dic, mode="w"):
     dir = Path(dir)

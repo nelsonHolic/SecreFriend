@@ -1,21 +1,43 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Scret Friend</title>
-  {% load staticfiles %}
-  <link rel="stylesheet" href="{% static "/Frontend/app/bower_components/bootstrap/dist/css/bootstrap.css" %}">
-  <link rel="stylesheet" href="{% static "/Frontend/app/css/app.css" %}">
-  <script src="{% static "/Frontend/app/bower_components/angular/angular.js" %}"></script>
-  <script src="{% static "/Frontend/app/bower_components/angular-route/angular-route.js" %}"></script>
-  <script src="{% static "/Frontend/app/js/logueo.js" %}"></script>
+<!DOCTYPE html>
+<html ng-app="appPrincipal">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title>Scret Friend</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "/Frontend/css/principal.css" %}">
+    <style>
+        .deslogueo
+        {
+            position: absolute;
+            margin-right: 0;
+            margin-top: 0;
+            text-decoration:underline;
+        }
+
+        .deslogueo:hover
+        {
+            cursor: pointer;
+            color: purple;
+        }
+
+    </style>
+    <script>
+        CSRF_TOKEN = '{{ csrf_token }}';
+    </script>
+    <script src="{% static "/Frontend/bower_components/angular/angular.js" %}"></script>
+    <script src="{% static "/Frontend/bower_components/angular-route/angular-route.js" %}"></script>
+    <script src="{% static "/Frontend/bower_components/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "/Frontend/js/apps/sorteo.js" %}"></script>
 </head>
 <body>
 
-  <div>
-      logueese
 
-  </div>
+<div>
+    <p  class="deslogueo" ng-controller="principalController" ng-click='desLoguearse()'>cerrar sesion</p>
 
+    <br>
+
+    <casilla-sorteo></casilla-sorteo>
+</div>
 </body>
 </html>
