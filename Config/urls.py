@@ -6,6 +6,7 @@ admin.autodiscover()
 from django.conf.urls.static import static
 from Config.settings import FRONTEND_URL
 from Backend.apps.principal.views import *
+from django.conf import settings
 
 urlpatterns = patterns('',
 
