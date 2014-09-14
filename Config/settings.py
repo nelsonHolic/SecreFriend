@@ -58,15 +58,13 @@ WSGI_APPLICATION = 'Config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SeguridadFriend',
-        'USER': 'root',
-        'PASSWORD' : '2456823176',
-        'HOST' : '',
-        'PORT' : '',
-    },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'nelsonholic_seguridadfriend',
+        'USER': 'nelsonholic',
+        'PASSWORD' : 'nai2456823176',
+        'HOST' : 'postgresql1.alwaysdata.com',
+    }
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -108,4 +106,3 @@ STATICFILES_DIRS = (
     RUTA_PROYECTO.child('static'),
     FRONTEND_URL,
 )
-

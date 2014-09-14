@@ -4,9 +4,9 @@
     <data-source source="LOCAL" name="Django default" uuid="2b427fa9-b939-481e-a6f9-f542ff2ace31">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql:///SeguridadFriend</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>df98df9edf9fdf9cdf92df98df99df9bdf9ddf9c</user-password>
+      <jdbc-url>jdbc:postgresql://postgresql1.alwaysdata.com/nelsonholic_seguridadfriend</jdbc-url>
+      <user-name>nelsonholic</user-name>
+      <user-password>dfc4dfcbdfc3df98df9edf9fdf9cdf92df98df99df9bdf9ddf9c</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Django default" uuid="0d7acc28-b367-4522-bbd8-7fbf93af7fc8">
