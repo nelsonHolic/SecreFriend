@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-
 from django.db import models
 
 def get_or_none(classmodel, **kwargs):
@@ -16,6 +15,7 @@ class Seguridadfriend(models.Model):
     name = models.TextField()
     password = models.TextField()
     seleccionado = models.BooleanField()
+    jugado = models.BooleanField()
     class Meta:
         db_table = 'seguridadfriend'
 

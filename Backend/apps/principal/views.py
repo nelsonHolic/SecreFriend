@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from django.views.generic import View
 import json
 from django.http import HttpResponseRedirect
+from django.db.models import Q
+import random
+import operator
 
 class VistaTest(View):
 
@@ -49,16 +52,44 @@ class ajaxRepond(TemplateView):
             if(datosDeLogueo['user']['password'] == usuario.password):
                 request.session['usuario'] = serializers.serialize('json',[usuario],fields = ('username','name'))
             else:
-                error = 'invalid'
+                error = 'usuario o contrasena inconrrecta'
         else:
-            error = 'notexist'
-        return HttpResponse(error, mimetype = 'application/json')
+            error = 'usuario o contrasena inconrrecta'
+        if(error):
+            mensaje = json.dumps({'error': error}, sort_keys=True,
+                             indent=4, separators=(',', ': '))
+            return HttpResponse(mensaje, mimetype = 'application/json')
+        else:
+            return HttpResponse('"success"', mimetype = 'application/json')
+
 
     def pruebaSession(self,request,*args,**kwargs):
-        print 'usuario'
         print request.session['usuario']
         return HttpResponse('dg', mimetype = 'application/json')
 
     def desLoguearse(self,request,*args,**kwargs):
             request.session['usuario'] = None
             return HttpResponse('succes')
+
+
+    def getSorteadores(self,request,*args,**kwargs):
+        usuario = json.loads(request.session['usuario'])[0]
+        error = None
+        if (usuario):
+            print usuario
+            usuario = get_or_none(Seguridadfriend,id = usuario[u'pk'])
+            if(usuario):
+                if(not usuario.jugado):
+                    query = Q(seleccionado = False)
+                    jugadores = Seguridadfriend.objects.filter(query)
+                    jugadores = jugadores.exclude(id = usuario.id)
+                    dato = serializers.serialize('json',jugadores,fields = ('username','name'))
+                    return HttpResponse(dato, mimetype = 'application/json')
+                else:
+                    error = 'usted ya ha jugado'
+                    print error
+            else:
+                error = 'un error ha ocurrido'
+        else:
+            error = 'un error ha ocurrido'
+        return HttpResponse(error)

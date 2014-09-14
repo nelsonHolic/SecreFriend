@@ -19,8 +19,22 @@
 
                 $scope.desLoguearse = desloguearse.desLoguearse;
 
+                $scope.sorteados = null;
+
+
+
+                $scope.getSorteados = function(){
+                    desloguearse.getSorteados($scope);
+                };
+
                 $scope.sortear = function(){
-                    console.log('sorteo')
+                    console.log('sorteando');
+                    var randomPosition= null;
+                    if($scope.sorteados){
+                        randomPosition = Math.floor((Math.random() * ($scope.sorteados.length)) + 1)-1;
+                        randomPosition = (randomPosition < 0 ) ? 0 : randomPosition;
+                        console.log($scope.sorteados[randomPosition]);
+                    }
                 }
 
             }]).config(function($httpProvider){
@@ -39,7 +53,7 @@
                     },
                     scope:true,
                     link: function(scope, element, attrs){
-                            console.log('algo');
+                        scope.getSorteados();
                     }
                 }
             }]).service('desLoguearse', ['$http',
@@ -60,6 +74,19 @@
                         cursor : 'wait'
                     });
                 };
+
+                this.getSorteados = function(scope){
+
+                    $http({
+                        method: 'GET',
+                        url: '/getSorteados/'
+                    }).success(function (data,status) {
+                        scope.sorteados = data;
+                    }).error(function(data,status){
+                        alert("Error al cargar la informacion del usuario")
+                    });
+                };
+
 
             }])
 }

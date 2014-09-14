@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^loguearse/$',ajaxRepond().loguearse),
     url(r'^puebaSession/$',ajaxRepond().pruebaSession),
     url(r'^desLoguearse/$',ajaxRepond().desLoguearse),
+    url(r'^getSorteados/$',ajaxRepond().getSorteadores),
 )

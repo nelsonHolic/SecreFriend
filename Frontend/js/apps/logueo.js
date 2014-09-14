@@ -56,10 +56,23 @@
                         url: '/loguearse/',
                         data: user
                     }).success(function (data,status) {
+                        var estado = eval(data);
                         $('body').css({
-                            cursor : ''
+                            cursor: ''
                         });
-                        location.reload();
+                        if (estado.error) {
+                            alert(estado.error);
+                        }
+                        else if (estado = 'success') {
+                            $('body').css({
+                                cursor: ''
+                            });
+                            location.reload();
+                        }else{
+                            $('body').css({
+                                cursor: ''
+                            });
+                        }
                     }).error(function(data,status){
                         alert("Error al cargar la informacion del usuario")
                     });
@@ -67,6 +80,8 @@
                         cursor : 'wait'
                     });
                 };
+
+
 
                 this.pruebaSession = function(){
 
