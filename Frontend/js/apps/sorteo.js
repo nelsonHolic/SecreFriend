@@ -39,6 +39,13 @@
                                 $scope.elementDom.removeChild($scope.elegidoElement[key]);
                             })
                         }
+                        if(! $scope.botonAceptar){
+                            var boton = document.createElement('button');
+                            boton.innerHTML = "aceptar";
+                            boton.onclick = $scope.postSorteado;
+                            $scope.botonAceptar = boton;
+                            $scope.elementDom.appendChild(boton);
+                        }
                         randomPosition = Math.floor((Math.random() * ($scope.sorteados.length)) + 1)-1;
                         randomPosition = (randomPosition < 0 ) ? 0 : randomPosition;
                         persona = $scope.sorteados[randomPosition];
@@ -53,6 +60,7 @@
                         $scope.elegidoElement = {name: elegidoElement, img: imagen};
                         $scope.intentos--;
                         if($scope.intentos <= 0){
+                            $scope.elegidoElement.removeChild($scope.botonAceptar);
                             desloguearse.postSorteado($scope)
                         }
                     }
@@ -113,8 +121,8 @@
                     }).success(function (data,status) {
                         scope.sorteados = data;
                         boton = document.createElement('button');
-                        boton.innerHTML = 'sortear'
-                        boton.onclick = scope.sortear
+                        boton.innerHTML = 'sortear';
+                        boton.onclick = scope.sortear;
                         scope.elementDom.removeChild(scope.mensajeElement);
                         scope.elementDom.appendChild(boton);
                         console.log(scope.sorteados);
@@ -125,6 +133,7 @@
 
                 this.postSorteado = function(scope){
                     var sorteado = JSON.stringify({id: scope.elegido.pk, username: scope.elegido.username});
+                    scope.elementDom.innerHTML = "<p>Gracias</p>";
                     $http({
                         method: 'POST',
                         url: '/postSorteado/',
