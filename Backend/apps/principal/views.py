@@ -101,10 +101,10 @@ class ajaxRepond(TemplateView):
             print usuario
             usuario = get_or_none(Seguridadfriend,id = usuario[u'pk'])
             if(usuario):
-                if(not usuario.jugado):
+                elegido = json.loads(request.body)
+                usuarioElegido = get_or_none(Seguridadfriend,id = elegido['id'])
+                if(not usuario.jugado and not usuarioElegido.seleccionado):
                     query = Q(seleccionado = False)
-                    elegido = json.loads(request.body)
-                    usuarioElegido = get_or_none(Seguridadfriend,id = elegido['id'])
                     print 'usuario elegido'
                     print usuarioElegido.username
                     usuarioElegido.seleccionado = True
